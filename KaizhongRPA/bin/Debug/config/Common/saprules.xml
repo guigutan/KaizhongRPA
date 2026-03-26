@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAP><type>SAP object rules</type><version>1.1</version><timestamp>2024-08-07 10:43:37</timestamp><rules><rule id="1"><files><name>*</name></files><action>0</action><contexts><context><system>S4P</system><network></network><client>800</client><transaction>ZMMF007</transaction><dynpro_name>ZMMF007</dynpro_name><dynpro_num>1000</dynpro_num><action>0</action></context></contexts></rule></rules></SAP>

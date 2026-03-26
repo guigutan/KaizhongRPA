@@ -1,0 +1,64 @@
+当前目录的：chrome文件夹和chromedriver文件夹 的所有内容请自行下载，github已经忽略
+
+【控制框架+浏览器+浏览器驱动】
+引用：
+	>>Selenium.WebDriver	(控制框架Selenium)	Selenium 4.xx.x 默认与 Chrome v75 及更高版本兼容
+	>>Selenium.Support		(控制框架Selenium)	Selenium 4.xx.x 默认与 Chrome v75 及更高版本兼容
+下载：
+	>>chrome		(浏览器)
+	>>chromedriver		(浏览器驱动) 与chrome大版本要一致	
+--------------------------------------------------------------
+chrome和chromedriver下载地址1：	
+	>>下载地址1：https://googlechromelabs.github.io/chrome-for-testing/
+	>>下载地址2：https://registry.npmmirror.com/binary.html?path=chrome-for-testing/
+
+ 
+chromeOptions.AddArgument("no-sandbox");	快捷键目标后加   --test-type -no-sandbox
+--------------------------------------------------------------------------------------------------------------------------
+
+-------chromedriver与chrome大版本要一致-------------
+chromedriver驱动:
+https://chromedriver.storage.googleapis.com/index.html
+https://chromedriver.chromium.org/downloads
+https://sites.google.com/chromium.org/driver/home 
+https://registry.npmmirror.com/binary.html
+chrome离线版：
+https://www.iplaysoft.com/tools/chrome/
+https://registry.npmmirror.com/binary.html
+------------------------------------------------
+https://www.selenium.dev/
+https://www.selenium.dev/downloads/
+https://www.selenium.dev/selenium/docs/api/dotnet/index.html
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

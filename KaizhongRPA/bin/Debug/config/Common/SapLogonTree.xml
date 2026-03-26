@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  SAPGUI for Windows 7400 3 20 3 2024 18:40:39 中国标准时间 -->
+<SAPTREE version="7400.3.8.1123">
+	<Files>
+		<File type="Connections" name="saplogon.ini"/>
+		<File type="Shortcuts" name="sapshortcut.ini"/>
+	</Files>
+	<Nodes>
+		<Favorites name="Favorites" expanded="1" uuid="2dc7eb0c-1b3e-4069-ac2a-fbb745470def">
+		</Favorites>
+		<Shortcuts name="Shortcuts" expanded="1" uuid="e890289f-3d69-49c8-8b71-35f1198f2c6a">
+		</Shortcuts>
+		<Connections name="Connections" expanded="1" uuid="5fd6afb1-21ed-4307-a653-0c208e20e9b2">
+			<Item name="S4P" type="connection" uuid="e72d9bd7-a126-4dbc-921a-6d7c630ee2a2"/><Item name="S4Q" type="connection" uuid="dbe501d7-b523-4181-a8ec-daac9f576409"><Memo xml:space="preserve"></Memo></Item></Connections>
+	</Nodes>
+</SAPTREE>
