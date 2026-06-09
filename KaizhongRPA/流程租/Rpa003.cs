@@ -1169,12 +1169,17 @@ namespace KaizhongRPA
 
 
                         await FillPUser(token, PUser);                      //01-填写申请人（新窗口）
+
+                        //20260609-付款公司放前面，优先填写。OA有异动（付款公司为空弹窗影响）
+                        await FillCompanyCode(token, CompanyCode);          //07-填写付款公司（公司代码）
+
+
                         await FillSupplierCode(token, SupplierCode, CSID);        //02-填写供应商代码
                         await FillPurchaseStype(token, PurchaseStype);      //03-选择<付款类型> 货到付款
                         await FillPayStype(token, PayStype);                //04-选择<支付类型>  材料款
                         await FillClass2(token, Class2);                    //05-填写二级分类
                         await FillIsIsExistPO(token, IsExistPO);            //06-选择是否有采购订单号
-                        await FillCompanyCode(token, CompanyCode);          //07-填写付款公司（公司代码）
+                     
                         await FillBankOf(token, BankOf);                    //08-选择对公对私
                         await FillSupplierShortName(token, SupplierShortName);  //09-填写供应商简称
                         await FillSWIFTCode(token, SWIFTCode);                  //10-填写收款人国家/地区（银行国家代码）

@@ -316,7 +316,6 @@ D:\myproject\KaizhongRPA\KaizhongRPA\bin\Debug\System.ValueTuple.xml
 D:\myproject\KaizhongRPA\KaizhongRPA\bin\Debug\WebDriver.xml
 D:\myproject\KaizhongRPA\KaizhongRPA\bin\Debug\WebDriver.Support.xml
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.csproj.AssemblyReference.cache
-D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.exe.config
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\Interop.SAPFEWSELib.dll
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\Interop.SapROTWr.dll
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.csproj.ResolveComReference.cache

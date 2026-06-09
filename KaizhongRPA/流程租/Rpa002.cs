@@ -919,12 +919,16 @@ namespace KaizhongRPA
                         await ClickZF003(token);            //04-点击ZF003流程，并切换新窗口
 
                         await FillPUser(token, PUser);                          //01-填写申请人（新窗口）
+
+                        //20260609-付款公司放前面，优先填写。OA有异动（付款公司为空弹窗影响）
+                        await FillCompanyCode(token, CompanyCode);              //07-填写付款公司（公司代码）
+
                         await FillSupplierCode(token, SupplierCode);            //02-填写供应商代码
                         await FillCurrency(token, Currency);                    //03-填写支付币种（货币）
                         await FillPayStype(token, PayStype);                    //04-选择付款类型（支付类型）>>预付材料款[默]
                         await FillClass2(token, Class2);                        //05-填写二级分类
                         await FillSupplierShortName(token, SupplierShortName);  //06-填写供应商简称
-                        await FillCompanyCode(token, CompanyCode);              //07-填写付款公司（公司代码）
+                      
                         await FillBankOf(token, BankOf);                        //08-选择对公对私
                         await FillInvoiceDate(token, InvoiceDate);              //09-填写预计金税发票提供时间
                         await FillIsLinkPR(token, IsLinkPR);                    //10-选择是否关联资本性支出请购流程
@@ -945,7 +949,7 @@ namespace KaizhongRPA
 
                     }
                 }
-                catch (Exception ex) { await publicClass.NoteLog(token, ex, dt_config); }
+                catch (Exception ex) { ex.Source = MyWeb.ChromeDriver; await publicClass.NoteLog(token, ex, dt_config); }
 
                 await PostResInfo(TablePO, ID, WechatKey);  //POST 执行后的结果
 
