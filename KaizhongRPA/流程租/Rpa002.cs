@@ -941,6 +941,9 @@ namespace KaizhongRPA
                         await ResPayInfo_SaveBefore(token,ID);                  //17-第一次刷新支付信息-支付金额（必须在保存前） (有异常情况)
                         await SaveOA(token, ID);                                //18-第一次保存OA 
                         await FillPO_Detail(token, PO, ID);                     //19-填写PO价格等其他明细信息（必须在保存后）
+                                                                                
+                        await Message_undefined_DefaultContent(token, ID);      //19-1-填写PO价格等其他明细信息，有弹窗了。处理弹窗
+
                         await ResPayInfo_SaveAfter(token);                      //20-第二次刷新支付信息-支付金额（价格更新后再次刷新）
                         await FillFilePath(token, FilePath);                    //21-填写相关附件-上传附件
                         await SaveOA(token, ID);                                //22-第二次保存OA
@@ -2274,6 +2277,39 @@ namespace KaizhongRPA
             catch (Exception ex) { throw ex; }
         }
 
+        private async Task Message_undefined_DefaultContent(CancellationToken token, string ID,int timeout = 60)
+        {
+            //捕获提交后的异常，并设置IsRequest=2              
+            try
+            {
+
+                Connstr = await publicClass.GetConnstr(token, dt_config);
+                string TablePO = await publicClass.GetLibValue(token, dt_config, "TablePO");
+
+                MyDriver.SwitchTo().DefaultContent();
+                
+                string msg = "";
+                var Message_undefineds = MyDriver.FindElements(By.Id("Message_undefined"));
+                for (int t = 0; t < 10; t++)
+                {
+                    if (Message_undefineds.Count > 0)
+                    {
+                        msg = Message_undefineds[0].Text.Trim();
+                        break;
+                    }
+                    await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
+                    Message_undefineds = MyDriver.FindElements(By.Id("Message_undefined"));
+                    if (t + 1 == 10) { /*不抛异常*/}
+                }
+                //设置IsRequest=2               
+                if (msg != "")
+                {
+                    sqlClass.UpdSQL($"update {TablePO} set IsRequest=2,ResInfo='{msg}' where ID={ID} ", Connstr);
+                    throw new Exception(msg);
+                }
+            }
+            catch { }
+        }
 
         private async Task ResPayInfo_SaveAfter(CancellationToken token,int timeout=60)
         {

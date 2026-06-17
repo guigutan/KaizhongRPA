@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\myproject\\KaizhongRPA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa003.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa003.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,30 +14,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Rpa003.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "ViewState": "AgIAAIUEAAAAAAAAAAApwJQEAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T02:33:21.915Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Rpa002.cs",
               "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "ViewState": "AgIAAJADAAAAAAAAAAApwJoDAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAPAIAAAAAAAAAAAgwAMJAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-09T01:01:28.218Z",
               "EditorCaption": ""
