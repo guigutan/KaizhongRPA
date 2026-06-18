@@ -1,0 +1,20 @@
+时间模块
+日志
+流程列表 
+
+流程配置文件（本地Excle）
+  >>复用的子配置文件（如：采购订单二级分类配置表、离职人员替换表）（远程Excle）
+
+
+SapLogon和SapShcut路径：（仅有效流程）路径不对提示
+
+
+
+RPAGroups
+WL015 (一个流程一个文件夹）
+
+
+
+1、获取所有继承自 InvokeCenter 的类型（RPA流程必须继承InvokeCenter ）【InvokeCenter可写公共函数】
+2、得到类后，GetMethod获取指定的方法名称（RPA流程的入口方法，固定，可以是集）
+3、执行入口方法内容

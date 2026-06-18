@@ -3,8 +3,15 @@
   "WorkspaceRootPath": "D:\\myproject\\KaizhongRPA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|D:\\myproject\\KaizhongRPA\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|KaizhongRPA||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,17 +36,52 @@
               "Name": "ST:17:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\Form1.cs",
+              "RelativeDocumentMoniker": "KaizhongRPA\\Form1.cs",
+              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\Form1.cs",
+              "RelativeToolTip": "KaizhongRPA\\Form1.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T01:03:12.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KaizhongRPA",
+              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\KaizhongRPA.csproj",
+              "RelativeDocumentMoniker": "KaizhongRPA\\KaizhongRPA.csproj",
+              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\KaizhongRPA.csproj",
+              "RelativeToolTip": "KaizhongRPA\\KaizhongRPA.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-18T00:25:26.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Rpa002.cs",
               "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "ViewState": "AgIAAPAIAAAAAAAAAAAgwAMJAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAArwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T01:01:28.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-09T01:01:28.218Z"
             }
           ]
         }
