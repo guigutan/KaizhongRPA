@@ -328,4 +328,3 @@ D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.csproj.CoreCompileInp
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\Kaizhong.EAA5D3A0.Up2Date
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.exe
 D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.pdb
-D:\myproject\KaizhongRPA\KaizhongRPA\obj\Debug\KaizhongRPA.exe.config

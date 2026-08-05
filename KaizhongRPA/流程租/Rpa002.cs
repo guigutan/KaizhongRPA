@@ -932,7 +932,10 @@ namespace KaizhongRPA
                         await FillBankOf(token, BankOf);                        //08-选择对公对私
                         await FillInvoiceDate(token, InvoiceDate);              //09-填写预计金税发票提供时间
                         await FillIsLinkPR(token, IsLinkPR);                    //10-选择是否关联资本性支出请购流程
+
                         await FillPurchaseStype(token, PurchaseStype);          //11-选择分期类型
+                        await FillPayTo(token, "付款给境内");          //11-1-选择付款范围
+
                         await FillSWIFTCode(token, SWIFTCode);                  //12-填写收款人国家/地区（银行国家代码）
                         await FillIsInfrastructure(token, IsInfrastructure);    //13-选择是否基建类
                         await FillIsIsExistPO(token, IsExistPO);                //14-选择是否有采购订单号
@@ -1817,6 +1820,37 @@ namespace KaizhongRPA
             catch (Exception ex) { throw ex; }
 
         }
+
+        private async Task FillPayTo(CancellationToken token, string payToTextValue = "付款给境内", int timeout = 60)
+        {
+            try
+            {
+
+                MyDriver.SwitchTo().DefaultContent();
+                await SwitchToIframe(token, By.Id("bodyiframe"), "workflow/request/AddRequestIframe.jsp");
+
+                //选择付款范围
+                var field106706s = MyDriver.FindElements(By.Id("field106706"));
+                for (int t = 0; t < timeout; t++)
+                {
+                    if (field106706s.Count > 0)
+                    {
+                        var select = new SelectElement(field106706s[0]); //Selenium.Support 
+                        select.SelectByText(payToTextValue);
+                        break;
+                    }
+                    await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
+                    field106706s = MyDriver.FindElements(By.Id("field106706"));
+                    if (t + 1 == timeout) { throw new Exception($"未能找到付款范围的选项框"); }
+                }
+
+
+
+            }
+            catch (Exception ex) { throw ex; }
+
+        }
+
 
         private async Task FillSWIFTCode(CancellationToken token, string SWIFTCode,int timeout=60)
         {

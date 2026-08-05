@@ -1176,6 +1176,8 @@ namespace KaizhongRPA
 
                         await FillSupplierCode(token, SupplierCode, CSID);        //02-填写供应商代码
                         await FillPurchaseStype(token, PurchaseStype);      //03-选择<付款类型> 货到付款
+                        await FillPayTo(token, "付款给境内");          //03-1-选择付款范围
+
                         await FillPayStype(token, PayStype);                //04-选择<支付类型>  材料款
                         await FillClass2(token, Class2);                    //05-填写二级分类
                         await FillIsIsExistPO(token, IsExistPO);            //06-选择是否有采购订单号
@@ -1647,6 +1649,38 @@ namespace KaizhongRPA
             }
             catch (Exception ex) {  throw ex; }
         }
+
+        private async Task FillPayTo(CancellationToken token, string payToTextValue = "付款给境内", int timeout = 60)
+        {
+            try
+            {
+
+                MyDriver.SwitchTo().DefaultContent();
+                await SwitchToIframe(token, By.Id("bodyiframe"), "workflow/request/AddRequestIframe.jsp");
+
+                //选择付款范围
+                var field106706s = MyDriver.FindElements(By.Id("field106706"));
+                for (int t = 0; t < timeout; t++)
+                {
+                    if (field106706s.Count > 0)
+                    {
+                        var select = new SelectElement(field106706s[0]); //Selenium.Support 
+                        select.SelectByText(payToTextValue);
+                        break;
+                    }
+                    await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
+                    field106706s = MyDriver.FindElements(By.Id("field106706"));
+                    if (t + 1 == timeout) { throw new Exception($"未能找到付款范围的选项框"); }
+                }
+
+
+
+            }
+            catch (Exception ex) { throw ex; }
+
+        }
+
+
         private async Task FillPayStype(CancellationToken token, string PayStype, int timeout = 60)
         {
             try
