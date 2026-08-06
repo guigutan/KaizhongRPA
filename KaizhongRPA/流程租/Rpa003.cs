@@ -1654,22 +1654,21 @@ namespace KaizhongRPA
         {
             try
             {
-
                 MyDriver.SwitchTo().DefaultContent();
                 await SwitchToIframe(token, By.Id("bodyiframe"), "workflow/request/AddRequestIframe.jsp");
 
                 //选择付款范围
-                var field106706s = MyDriver.FindElements(By.Id("field106706"));
+                var field106707s = MyDriver.FindElements(By.Id("field106707"));
                 for (int t = 0; t < timeout; t++)
                 {
-                    if (field106706s.Count > 0)
+                    if (field106707s.Count > 0)
                     {
-                        var select = new SelectElement(field106706s[0]); //Selenium.Support 
+                        var select = new SelectElement(field106707s[0]); //Selenium.Support 
                         select.SelectByText(payToTextValue);
                         break;
                     }
                     await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
-                    field106706s = MyDriver.FindElements(By.Id("field106706"));
+                    field106707s = MyDriver.FindElements(By.Id("field106707"));
                     if (t + 1 == timeout) { throw new Exception($"未能找到付款范围的选项框"); }
                 }
 
