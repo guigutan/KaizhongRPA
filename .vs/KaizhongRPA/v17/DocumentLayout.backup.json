@@ -1,17 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\myproject\\KaizhongRPA\\",
+  "WorkspaceRootPath": "D:\\MyProject\\KaizhongRPA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa003.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa003.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa004.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa004.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|D:\\myproject\\KaizhongRPA\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,45 +14,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Rpa004.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-06T06:21:22.672Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Rpa003.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T06:34:57.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Rpa002.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
+              "DocumentMoniker": "D:\\MyProject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
+              "ToolTip": "D:\\MyProject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
               "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "ViewState": "AgIAACkHAAAAAAAAAAAlwDsHAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAANQAAAAAAAAAAADwv+wAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T06:26:39.194Z"
+              "WhenOpened": "2026-09-02T08:42:45.35Z",
+              "EditorCaption": ""
             }
           ]
         }

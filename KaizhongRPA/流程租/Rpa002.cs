@@ -2185,7 +2185,7 @@ namespace KaizhongRPA
                 {
                     var w1 = trs[0].FindElements(By.XPath(".//input[@temptitle='订单本币金额（未税）']"));
                     var w2 = trs[0].FindElements(By.XPath(".//input[@temptitle='本次付款金额(未税)']"));
-                    var w3 = trs[0].FindElements(By.XPath(".//input[@temptitle='税率']"));
+                    var w3 = trs[0].FindElements(By.XPath(".//input[@temptitle='税率%']"));
                     var w4 = trs[0].FindElements(By.XPath(".//input[@temptitle='本次付款金额（含税）']"));
                     if (w1.Count > 0 && w2.Count > 0 && w3.Count > 0 && w4.Count > 0) { break; }
                     if (t + 1 == timeout) { throw new Exception("datarow数据行的tr行的相应的列未完全加载"); }
@@ -2203,7 +2203,7 @@ namespace KaizhongRPA
                     if (benbiwei == "" || benbiwei == "0") { throw new Exception("获取'订单本币金额（未税）'失败！"); }
 
                     //获取：税率 
-                    string shuilv = trs[i].FindElement(By.XPath(".//input[@temptitle='税率']")).GetDomAttribute("value").Trim().Replace("%", "");
+                    string shuilv = trs[i].FindElement(By.XPath(".//input[@temptitle='税率%']")).GetDomAttribute("value").Trim().Replace("%", "");
                     if (shuilv == "") { shuilv = "0"; }
 
 
