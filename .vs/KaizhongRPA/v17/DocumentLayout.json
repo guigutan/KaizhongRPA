@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\myproject\\KaizhongRPA\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa003.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa003.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|d:\\myproject\\kaizhongrpa\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa004.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa004.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|D:\\myproject\\KaizhongRPA\\kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7ACD1EF-A1D6-42C6-88C1-A55658039DB0}|KaizhongRPA\\KaizhongRPA.csproj|solutionrelative:kaizhongrpa\\\u6D41\u7A0B\u79DF\\rpa002.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\MyProject\\KaizhongRPA\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,45 +9,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Rpa004.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa004.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-06T06:21:22.672Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Rpa003.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa003.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T06:34:57.662Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Rpa002.cs",
-              "DocumentMoniker": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "RelativeDocumentMoniker": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "ToolTip": "D:\\myproject\\KaizhongRPA\\KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "RelativeToolTip": "KaizhongRPA\\\u6D41\u7A0B\u79DF\\Rpa002.cs",
-              "ViewState": "AgIAACkHAAAAAAAAAAAlwDsHAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T06:26:39.194Z"
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             }
           ]
         }

@@ -20,6 +20,7 @@ using System.Reflection.Emit;
 using System.Security.Cryptography;
 using OpenQA.Selenium.BiDi.Modules.Input;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
+using OpenQA.Selenium.Interactions;
 
 
 
@@ -2185,7 +2186,7 @@ namespace KaizhongRPA
                 {
                     var w1 = trs[0].FindElements(By.XPath(".//input[@temptitle='订单本币金额（未税）']"));
                     var w2 = trs[0].FindElements(By.XPath(".//input[@temptitle='本次付款金额(未税)']"));
-                    var w3 = trs[0].FindElements(By.XPath(".//input[@temptitle='税率']"));
+                    var w3 = trs[0].FindElements(By.XPath(".//input[@temptitle='税率%']"));
                     var w4 = trs[0].FindElements(By.XPath(".//input[@temptitle='本次付款金额（含税）']"));
                     if (w1.Count > 0 && w2.Count > 0 && w3.Count > 0 && w4.Count > 0) { break; }
                     if (t + 1 == timeout) { throw new Exception("datarow数据行的tr行的相应的列未完全加载"); }
@@ -2203,7 +2204,7 @@ namespace KaizhongRPA
                     if (benbiwei == "" || benbiwei == "0") { throw new Exception("获取'订单本币金额（未税）'失败！"); }
 
                     //获取：税率 
-                    string shuilv = trs[i].FindElement(By.XPath(".//input[@temptitle='税率']")).GetDomAttribute("value").Trim().Replace("%", "");
+                    string shuilv = trs[i].FindElement(By.XPath(".//input[@temptitle='税率%']")).GetDomAttribute("value").Trim().Replace("%", "");
                     if (shuilv == "") { shuilv = "0"; }
 
 
@@ -2281,7 +2282,9 @@ namespace KaizhongRPA
                     await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
                     btn_synzf_buttoms = MyDriver.FindElements(By.Id("btn_synzf_buttom"));
                     if (t + 1 == timeout) { throw new Exception("未能找到刷新支付金额按钮"); }
-                }
+                }              
+
+
 
                 //异常情况
                 string MesssageE = "";
@@ -2305,6 +2308,42 @@ namespace KaizhongRPA
                     sqlClass.UpdSQL($"update {TablePO} set IsRequest=2 , ResInfo='{MesssageE}' where ID='{ID}'", Connstr);
                     throw new Exception($"{MesssageE}");
                 }
+
+
+                // 点击“刷新支付金额”后，鼠标光标对焦金额处，再失去焦点。以便自动处理小数点
+                try 
+                {
+                    MyDriver.SwitchTo().DefaultContent();
+                    await SwitchToIframe(token, By.Id("bodyiframe"), "workflow/request/AddRequestIframe.jsp");  //第1次是：AddRequestIframe，第2次是：ManageRequestNoFormIframe
+
+                    string oTable4 = "//table[@id='oTable4']//tbody//tr[@_target='datarow']";
+                    var trs = MyDriver.FindElements(By.XPath($"{oTable4}"));
+                                       
+                    for (int t = 0; t < timeout; t++)
+                    {
+                        if (trs.Count > 0) { break; }
+                        trs = MyDriver.FindElements(By.XPath($"{oTable4}"));
+                        await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
+                    }
+
+                    var inputs = trs[0].FindElements(By.XPath($@"//td[@class='detail4_3_4']//input[@temptitle='金额']"));
+                    if (inputs.Count > 0)
+                    {                       
+                       
+                        new Actions(MyDriver)
+                            .Click(inputs[0])
+                            .Perform();
+
+                        inputs[0].SendKeys(OpenQA.Selenium.Keys.Tab);
+
+                    }               
+
+
+
+                }
+                catch { }
+               
+
 
 
             }
@@ -2384,6 +2423,38 @@ namespace KaizhongRPA
                 await Task.Delay(3000, token); token.ThrowIfCancellationRequested();
 
 
+                // 点击“刷新支付金额”后，鼠标光标对焦金额处，再失去焦点。以便自动处理小数点
+                try
+                {
+                    MyDriver.SwitchTo().DefaultContent();
+                    await SwitchToIframe(token, By.Id("bodyiframe"), "ManageRequestNoFormIframe.jsp");  //第1次是：AddRequestIframe，第2次是：ManageRequestNoFormIframe
+
+                    string oTable4 = "//table[@id='oTable4']//tbody//tr[@_target='datarow']";
+                    var trs = MyDriver.FindElements(By.XPath($"{oTable4}"));
+
+                    for (int t = 0; t < timeout; t++)
+                    {
+                        if (trs.Count > 0) { break; }
+                        trs = MyDriver.FindElements(By.XPath($"{oTable4}"));
+                        await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
+                    }
+
+                    var inputs = trs[0].FindElements(By.XPath($@"//td[@class='detail4_3_4']//input[@temptitle='金额']"));
+                    if (inputs.Count > 0)
+                    {
+
+                        new Actions(MyDriver)
+                            .Click(inputs[0])
+                            .Perform();
+
+                        inputs[0].SendKeys(OpenQA.Selenium.Keys.Tab);
+
+                    }
+
+
+
+                }
+                catch { }
 
 
                 //检查必填项
@@ -2596,6 +2667,15 @@ namespace KaizhongRPA
                 //捕获提交后的异常，并设置IsRequest=2              
                 try
                 {
+
+                    ////支付金额 (48.37)必须与付款金额总计(48.38)一致
+                    //MyDriver.FindElement(By.LinkText("支付金额 (48.37)必须与付款金额总计(48.38)一致")).Click();                  
+                    //IAlert alert = MyDriver.SwitchTo().Alert();
+                    //string text = alert.Text;
+                    //alert.Accept();
+                    //alert.Dismiss();
+
+                    await Task.Delay(2000, token); token.ThrowIfCancellationRequested();
                     string msg = "";
                     var Message_undefineds = MyDriver.FindElements(By.Id("Message_undefined"));
                     for (int t = 0; t < 10; t++)
@@ -2616,9 +2696,12 @@ namespace KaizhongRPA
                         throw new Exception(msg);
                     }
                 }
-                catch { }
-              
+                catch {
+                                      
+                }
 
+
+                            
                
 
 
