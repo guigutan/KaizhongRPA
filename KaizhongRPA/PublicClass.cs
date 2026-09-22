@@ -484,8 +484,20 @@ namespace KaizhongRPA
                         proc.Kill();
                         token.ThrowIfCancellationRequested();  //await Task.Delay(10, token);
                     }
-                    Process.Start(SapLogon);//启动后等3秒左右，否则SapGuiRot仍为NULL
-                    token.ThrowIfCancellationRequested();  await Task.Delay(5000, token);
+                    Process.Start(SapLogon);//启动后等待，否则SapGuiRot仍为NULL
+
+
+                    object SapGuiRot_wait = sapROTWrapper.GetROTEntry("SAPGUI");
+                    for (int i = 0; i < 60; i++) //最多等待60秒
+                    {
+                        token.ThrowIfCancellationRequested(); await Task.Delay(1000, token);
+                        if (SapGuiRot_wait == null) { SapGuiRot_wait = sapROTWrapper.GetROTEntry("SAPGUI"); }
+                        else { break; }
+                    }
+
+
+
+                    
                     return await GetSAPGuiApp(token, SapLogon, secondsOfTimeOut - 1);
                 }
                 else

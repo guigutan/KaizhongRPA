@@ -251,6 +251,7 @@ namespace KaizhongRPA
             try
             {
                 await publicClass.GotoSapHome(token, dt_config, 0, 2);  //登录SAP（已登录则退回首页）
+                await Task.Delay(2000, token); token.ThrowIfCancellationRequested();
                 await EnterTransaction(token, "ZFIF001M");              //ZFIF001M事务码
 
                 (MySap.Session.FindById("wnd[0]/usr/ctxtP_BUKRS") as GuiCTextField).Text = CompanyCode; //填写公司代码                       
@@ -378,13 +379,25 @@ namespace KaizhongRPA
         public async Task EnterTransaction(CancellationToken token, string transactionCode)
         {
             try
-            {
-                (MySap.Session.FindById("wnd[0]/tbar[0]/okcd") as GuiOkCodeField).Text = transactionCode;//输入事务码
+            {               
+                try
+                {
+                    (MySap.Session.FindById("wnd[0]/tbar[0]/okcd") as GuiOkCodeField).Text = transactionCode;//输入事务码 ZFIF001M
+                }
+                catch
+                {
+                    await publicClass.GotoSapHome(token, dt_config, 0, 2);  //登录SAP（已登录则退回首页）
+                    await Task.Delay(2000, token); token.ThrowIfCancellationRequested();
+
+                    (MySap.Session.FindById("wnd[0]/tbar[0]/okcd") as GuiOkCodeField).Text = transactionCode;//输入事务码 ZFIF001M
+                }
+               
+
                 await Task.Delay(50, token); token.ThrowIfCancellationRequested();
                 (MySap.Session.FindById("wnd[0]") as GuiFrameWindow).SendVKey(0);//回车
                 await Task.Delay(200, token); token.ThrowIfCancellationRequested();
             }
-            catch (Exception ex) {  throw ex; }
+            catch (Exception ex) { throw ex; }
         }
 
         #endregion
@@ -448,6 +461,7 @@ namespace KaizhongRPA
                         if (CompanyCode == "") { continue; }
 
                         await publicClass.GotoSapHome(token, dt_config, 0, 2);  //登录SAP（已登录则退回首页）
+                        await Task.Delay(2000, token); token.ThrowIfCancellationRequested();
                         await EnterTransaction(token, "ZFIF001M");              //ZFIF001M事务码
 
                         (MySap.Session.FindById("wnd[0]/usr/ctxtP_BUKRS") as GuiCTextField).Text = CompanyCode; //填写公司代码                                                 
@@ -1193,16 +1207,19 @@ namespace KaizhongRPA
 
 
                         await FillPO_NO(token, dtPO, CSID);         //01-循环填入PO号
-                        await ResPayInfo_SaveBefore(token, CSID);   //02-第一次刷新支付信息-支付金额（必须在保存前）                       
+                        await FillPO_Detail(token, dtPO);           //05-填写PO价格等其他明细信息（必须在保存前）
+                        await ResPayInfo_SaveBefore(token, CSID);   //02-第一次刷新支付信息-支付金额（必须在保存前）
+                                                                   
                         await SaveOA(token, CSID);                  //03-第一次保存OA----------------------------------注意保存后bodyiframe变化-----                                                                
-                        await DelRepeatPO(token);                   //04-勾选删除重复PO
-                        await FillPO_Detail(token, dtPO);           //05-填写PO价格等其他明细信息（必须在保存后）
+                        await DelRepeatPO(token);                   //04-勾选删除重复PO                     
                         await ResPayInfo_SaveAfter(token);          //06-第二次刷新支付信息-支付金额（价格更新后再次刷新）
                         await SaveOA(token, CSID);                  //07-第二次保存OA
 
+
+
                         await CheckPriceIncludingTax(token, PriceIncludingTax, CSID);   //01-校验含税总额是否一致 
                         await Countersign(token, CSNO);                                 //02-签字意见
-                        await SubOA(token, CSID);                            //03-提交OA
+                        await SubOA(token, CSID);                                       //03-提交OA
 
 
 
@@ -2585,7 +2602,9 @@ namespace KaizhongRPA
             {      
 
                 MyDriver.SwitchTo().DefaultContent();
-                await SwitchToIframe(token, By.Id("bodyiframe"), "ManageRequestNoFormIframe.jsp"); //保存后bodyiframe是ManageRequestNoFormIframe
+                //await SwitchToIframe(token, By.Id("bodyiframe"), "ManageRequestNoFormIframe.jsp"); //保存后
+                await SwitchToIframe(token, By.Id("bodyiframe"), "workflow/request/AddRequestIframe.jsp"); //保存前
+
 
                 //等待加载：oTable2
                 string oTable2 = "//table[@id='oTable2']//tbody//tr[@_target='datarow']";
@@ -2624,6 +2643,7 @@ namespace KaizhongRPA
 
 
                     //单据完整性
+                    
                     IWebElement wzx = trs[i].FindElement(By.XPath(".//select[@temptitle='单据完整性']"));
                     var wzxE = new SelectElement(wzx); //Selenium.Support 
                     wzxE.SelectByText($"{dtPO.Rows[0]["IsOrderComplete"].ToString()}");

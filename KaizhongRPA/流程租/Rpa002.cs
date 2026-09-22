@@ -149,7 +149,19 @@ namespace KaizhongRPA
         {
             try
             {
+                (MySap.Session.FindById("wnd[0]/tbar[0]/okcd") as GuiOkCodeField).Text = transactionCode;//输入事务码               
+            }
+            catch 
+            {
+                await publicClass.GotoSapHome(token, dt_config, 0, 2);//登录SAP（已登录则退回首页）
+                await Task.Delay(3000, token); token.ThrowIfCancellationRequested();
                 (MySap.Session.FindById("wnd[0]/tbar[0]/okcd") as GuiOkCodeField).Text = transactionCode;//输入事务码
+            }
+
+
+            try
+            {  
+                
                 await Task.Delay(50, token); token.ThrowIfCancellationRequested();
                 (MySap.Session.FindById("wnd[0]") as GuiFrameWindow).SendVKey(0);//回车
                 await Task.Delay(200, token); token.ThrowIfCancellationRequested();
