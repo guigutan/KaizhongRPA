@@ -1806,7 +1806,7 @@ namespace KaizhongRPA
 
 
                 //输入公司代码
-                var gongsdms = MyDriver.FindElements(By.XPath("//input[@name='gongsdm']"));
+                var gongsdms = MyDriver.FindElements(By.XPath("//input[@name='gsdm']"));
                 for (int t = 0; t < timeout; t++)
                 {
                     if (gongsdms.Count > 0)
@@ -1820,7 +1820,7 @@ namespace KaizhongRPA
                     }
 
                     await Task.Delay(1000, token); token.ThrowIfCancellationRequested();
-                    gongsdms = MyDriver.FindElements(By.XPath("//input[@name='gongsdm']"));
+                    gongsdms = MyDriver.FindElements(By.XPath("//input[@name='gsdm']"));
                     if (t + 1 == timeout) { throw new Exception("未能找到公司代码的输入框"); }
                 }
 
