@@ -207,9 +207,11 @@ namespace KaizhongRPA
 
                         //----------------------------------------------------------------------------------------
                         //----------------------------------------------------------------------------------------
-                        
 
+                      
                         bool AllS = temp_AllS= await Check_SE(token, SapResFile);//判断状态(S\E)
+
+
                         if (AllS)
                         {
                             try { await OA_Approve(token, SapResFile); }//异常时 ，转办                           
@@ -219,6 +221,7 @@ namespace KaizhongRPA
                             await OA_Transfer(token, SapResFile, ""); //非全S，转办
                         }
                        
+
 
                         //-----结束，关闭网页重来-----------------------------------------------------------------------------------
                         //待优化：重来时跳过异常的OA流程，点击下一个OA流程(记录requestid)
@@ -230,6 +233,12 @@ namespace KaizhongRPA
                 }
                 catch (Exception ex)
                 {
+
+
+
+
+
+
                     if (isExistPending) { await PostResInfo(temp_Requestid, requestnamespan, ItemNO, temp_AllS, temp_WechatPostFilePath, WechatKey,$"{ex.Message}"); } //POST 执行后的结果  异常
 
                     await publicClass.NoteLog(token, ex, dt_config);
@@ -1240,15 +1249,36 @@ namespace KaizhongRPA
             bool isAll_S = false;
             try
             {
+
+                string errorMsg = "";
                 DataTable dtFile = await publicClass.ExcelToDataTable(token, filePath);
                 if (dtFile== null) { throw new Exception("sap工艺导入后的返回结果为空"); }
                 bool MesStyleName=false;
                 for (int c = 0; c < dtFile.Columns.Count; c++)
                 {
                     if (dtFile.Columns[c].ColumnName == "消息类型") { MesStyleName = true;break; }
+                    if (dtFile.Columns[c].ColumnName == "错误信息") 
+                    {
+
+                        for (int r =0;r< dtFile.Rows.Count;r++)
+                        {
+                            errorMsg += $@"第{dtFile.Rows[0][0]}行，{dtFile.Rows[r]["错误信息"].ToString()};";
+                        }
+                        await OA_Transfer(token, filePath, errorMsg); //转办
+                        MesStyleName = false; break;
+                    }                  
+
+
                     token.ThrowIfCancellationRequested(); await Task.Delay(10, token);
                 }
-                if (!MesStyleName) { throw new Exception("sap工艺导入后的返回结果不存在[消息类型]这样的列"); }
+
+
+                if (!MesStyleName) { throw new Exception($"sap工艺导入后的:{errorMsg}"); }
+
+
+
+
+
 
                 isAll_S = true;
                 for (int i = 0; i < dtFile.Rows.Count; i++)
